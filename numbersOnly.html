@@ -13,10 +13,24 @@
       }
       return newArray
     }
-    
+
     var oldArray = [1, "apple", -3, "orrange", 0.5]
     var newArray = numbersOnly(oldArray)
     console.log(newArray)
+
+    function numbersOnlyRemove(arr){
+  		for (var i = 0; i < arr.length; i++) {
+  			while(typeof(arr[i]) != "number"){
+  				for (var k = i; k < arr.length; k++) {
+  					arr[k] = arr[k+1]
+  				}
+  				arr.pop()
+  			}
+  		}
+  		console.log(arr);
+  	}
+
+    numbersOnlyRemove([1, "apple", -3, "orange", 0.5])
 
     </script>
   </head>
