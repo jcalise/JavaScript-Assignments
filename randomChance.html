@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    var winnings = 0;
+    function game(numQuarters) {
+      while (numQuarters > 0) {
+        numQuarters -= 1
+        var chance = Math.floor(Math.random() * 100)
+        var winningNumber = Math.floor(Math.random() * 100)
+        if (chance == winningNumber) {
+          winnings = Math.floor(Math.random() * 50) + 50
+          numQuarters += winnings
+          console.log("You won", winnings,"quarters and have",numQuarters, "left!")
+        } else {
+          console.log("You lost. You have",numQuarters,"remaining quarters.")
+        }
+      }
+    }
+
+    // var numQuarters = 20;
+    var numQuarters = prompt("How many quarters do you want to spend?")
+
+    if (!isNaN(numQuarters)) {
+      game(numQuarters)
+    } else {
+      alert("Must enter a number!");
+    }
+
+
+
+
+    "use strict";
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
