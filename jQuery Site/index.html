@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Poutine the Pup</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("sup").click(function(){ //using click function for sources
+          alert("Source: Wikipedia")
+        });
+
+        $("#SeaMore").click(function(){
+          if ( $( "#SeaMoreText" ).is( ":hidden" ) ) {
+            $( "#SeaMoreText" ).slideDown( "slow" );
+          } else {
+            $( "#SeaMoreText" ).hide();
+          }
+        });
+
+        $("#colorchange").click(function(){
+          $(this).addClass("red");
+        });
+
+        var Sea = $("#SeaMoreText").text();
+        console.log(Sea);
+
+        $("#append a").click(function(){
+          $("#append").append(Sea);
+          $("#append").after(function(){
+            var html = $("#append").html();
+            html = html + "<button id='hideme'>Click me to make this all go away!</button>";
+            $("#append").html(html)
+          });
+        });
+
+        $("#hideme").click(function(){
+          $(this).hide()
+        });
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile">
+        <img src="Poutine.png" alt="Poutine">
+        <h1>Hi! I'm Poutine</h1>
+        <p>I'm a 7 (almost 8) year old Golden Retriever/Chow Chow mix who lives in the
+        beautiful Pacific Northwest with my dads. We live in Seattle, which is the largest city in both
+        the state of Washington and the Pacific Northwest.<sup><a href="#">1</a></sup> We really like it here!
+        Would you like to know more about Seattle? <a href="#" id="SeaMore">Click here</a> to "Sea" more</p>
+        <div id="SeaMoreText">
+          Seattle is a seaport city on the west coast of the United States and the seat of King County, Washington. With an estimated 704,352 residents as of 2016, Seattle is the largest city in both the state of Washington and the Pacific Northwest region of North America.
+          In July 2013, it was the fastest-growing major city in the United States and remained in the Top 5 in May 2015 with an annual growth rate of 2.1%. In July 2016, Seattle was again the fastest-growing major U.S. city, with a 3.1% annual growth rate.
+          The city is situated on an isthmus between Puget Sound (an inlet of the Pacific Ocean) and Lake Washington, about 100 miles (160 km) south of the Canada–United States border. A major gateway for trade with Asia, Seattle is the fourth-largest port in North America in terms of container handling as of 2015.
+        </div>
+        <p>I'm a dog, so my hobbies are pretty limited. Some of the things I like to do are:</p>
+        <ul>
+          <li>Stare at my dads all day</li>
+          <li>Chase squirrels, birds, mice</li>
+          <li>Agressivly sniff smaller dogs</li>
+          <li>Eat treats</li>
+          <li>Eat breakfast</li>
+          <li>Eat dinner</li>
+          <li>You get the idea...right?</li>
+        </ul>
+      </div> <!-- end profile -->
+      <div class="main">
+        <p id="colorchange">Now, let's test out some jQuery functions. For example, click this text for a cool color change effect!</p>
+        <p id="append">
+          Did you catch that option to click more to learn more about Seattle above? No? We'll, <a href="#">Click here</a> and well show you now:
+        </p>
+
+
+      </div> <!-- end of main -->
+
+    </div><!-- end container -->
+  </body>
+</html>
+
+
+
+<!--
+.hide
+.show
+.toggle
+.slideUp
+.slideToggle
+.fadeIn
+.fadeOut
+.before
+.after
+.attr
+.val
+.text
+.data
+-->
