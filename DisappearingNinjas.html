@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .container {
+        width: 900px;
+        margin: 0 auto;
+      }
+      img {
+        width: 200px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("img").click(function(){ //using click function for sources
+          $(this).hide();
+        });
+
+        $("button").click(function(){
+          $("img").show();
+        });
+
+      });
+    </script>
+
+  </head>
+  <body>
+    <div class="container">
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+      <img src="Poutine.png" alt="Poutine" />
+
+      <button>R E S T O R E</button>
+    </div>
+  </body>
+</html>
