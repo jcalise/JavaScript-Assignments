@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <style media="screen">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container {
+        width: 640px;
+        padding: 20px;
+        margin: 0px auto;
+      }
+      #userData {
+        width: 600px;
+        border: 1px solid black;
+        margin-bottom: 50px;
+      }
+      input[type=submit] {
+          margin: 20px 0 0 250px;
+      }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("form").submit(function(){
+          var formData = $(this).serializeArray()
+
+          var appenData = "<tr>"
+          $.each(formData, function(i, field){
+            appenData += "<td>" + field.value +"</td>"
+          });
+
+          appenData += "</tr>"
+
+          $("#userData").children('tbody').append(appenData);
+
+          // $("#userData").children('tbody').append("<tr>");
+          // $.each(formData, function(i, field){
+          //   $("#userData").children('tbody').append("<td>" + field.value + "<td>");
+          // });
+          // $("#userData").children('tbody').append("</tr>");
+
+          return false
+          
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <table id="userData">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Contact Number</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+      <form action="" method="post">
+        <label for="first">First Name: </label><input id="first" name="first" value="First Name" /><br />
+        <label for="last">Last Name: </label><input id="last" name="last" value="Last Name" /><br />
+        <label for="email">Email Address: </label><input id="email" name="email" value="Email Address" /><br />
+        <label for="phone">Phone Number: </label><input id="phone" name="phone" value="Phone Number" /><br />
+        <input type="submit" name="submit" value="Add User" id="submit">
+      </form>
+    </div> <!-- end container -->
+  </body>
+</html>
