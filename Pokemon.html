@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var pokemon = ""
+
+        for (var i = 0; i < 152; i++) {
+          pokemon += "<img src='http://pokeapi.co/media/img/" + i + ".png' />"
+
+        }
+
+
+        $(".main").html(pokemon);
+      });
+    </script>
+    <style media="screen">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .main {
+        width: 970px;
+        margin: 0px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+
+    </div>
+
+  </body>
+</html>
